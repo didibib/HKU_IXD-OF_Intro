@@ -3,7 +3,7 @@
 
 #include "ofMain.h"
 
-class BouncyBall : public ofBaseApp {
+class BouncyBall {
 
 public:
 	BouncyBall();
