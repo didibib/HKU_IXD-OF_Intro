@@ -8,13 +8,13 @@ void ofApp::setup(){
 	gui.add(radius.set("Radius", 10, 0, 200));
 	gui.add(resolution.set("Resolution", 10, 0, 10));	
 
-	sphere.set(radius, resolution); // here or ...
+	sphere.set(radius, resolution); // als ik de .set in setup() doe, dan werkt tweakFaces() wel, maar kan ik niet met de gui de variablen beinvloeden
 }
 
 void ofApp::update(){	
 	cam.setDistance(0);
 	spotlight.setPosition(0, 0, 0);
-	//sphere.set(radius, resolution); // ... here
+	//sphere.set(radius, resolution); // als ik de .set in update() doe dan werkt tweakFaces(), maar kan ik wel med gui de variablen beinvloeden
 
 	spinX = sin(ofGetElapsedTimef()*.5f);
 	spinY = cos(ofGetElapsedTimef()*.5f);	
