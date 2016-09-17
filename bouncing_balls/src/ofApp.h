@@ -2,23 +2,30 @@
 
 #include "ofMain.h"
 
-class ofApp : public ofBaseApp{
+#include "BouncyBall.h"
+#include "Pyramid.h"
+
+class ofApp : public ofBaseApp {
 
 	public:
+		static const int nBalls = 10;
+		BouncyBall balls[nBalls];
+		ofConePrimitive pyramid;
+		ofEasyCam cam;
+		vector<ofMeshFace> triangles;
+		ofLight pointlight;
+
+		float radius = 100;
+		float height = 100;
+		float radiusSegments = 4;
+		float heightSegments = 1;
+		float capsSegments = 1;
+
 		void setup();
 		void update();
 		void draw();
+		void tweakTriangles();
 
 		void keyPressed(int key);
-		void keyReleased(int key);
-		void mouseMoved(int x, int y );
-		void mouseDragged(int x, int y, int button);
 		void mousePressed(int x, int y, int button);
-		void mouseReleased(int x, int y, int button);
-		void mouseEntered(int x, int y);
-		void mouseExited(int x, int y);
-		void windowResized(int w, int h);
-		void dragEvent(ofDragInfo dragInfo);
-		void gotMessage(ofMessage msg);
-		
 };

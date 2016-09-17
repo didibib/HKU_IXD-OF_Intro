@@ -1,6 +1,4 @@
-﻿  BouncyBall.cpp
-  ofApp.cpp
-     Creating library bin\bouncing_balls_debug.lib and object bin\bouncing_balls_debug.exp
+﻿  ofApp.cpp
   bouncing_balls.vcxproj -> C:\Users\Tariq Bakhtali\Desktop\OF\apps\KMIxD\bouncing_balls\bin\bouncing_balls_debug.exe
   bouncing_balls.vcxproj -> bin\bouncing_balls_debug.pdb (Full PDB)
   

@@ -1,19 +1,17 @@
 #pragma once
-#include "C:\Users\Tariq Bakhtali\Desktop\OF\libs\openFrameworks\app\ofBaseApp.h"
 
 #include "ofMain.h"
 
-class BouncyBall {
-
+class BouncyBall
+{
 public:
 	BouncyBall();
 	~BouncyBall();
 
-	void setup();
-	void update();
-	void draw();
+	void setupBall();
+	void updateBall();
+	void drawBall();
 
-private:
 	float x, y;
 	float speedX, speedY;
 	float radius;
