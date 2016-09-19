@@ -6,14 +6,16 @@ class BouncyBall
 {
 public:
 	BouncyBall();
-	~BouncyBall();
+
+	ofVec3f position;
+	float speedX, speedY;
+	float radius;
+	ofColor color;
 
 	void setupBall();
 	void updateBall();
 	void drawBall();
-
-	float x, y;
-	float speedX, speedY;
-	float radius;
-	ofColor color;
+	void detectBorders();
+	void resetBall();
+	
 };

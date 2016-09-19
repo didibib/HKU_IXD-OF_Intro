@@ -1,0 +1,4 @@
+﻿  main.cpp
+  ofApp.cpp
+src\main.cpp(11): error C2280: 'ofApp::ofApp(void)': attempting to reference a deleted function
+  c:\users\tariq bakhtali\desktop\of\apps\kmixd\grid\src\ofApp.h(25): note: compiler has generated 'ofApp::ofApp' here

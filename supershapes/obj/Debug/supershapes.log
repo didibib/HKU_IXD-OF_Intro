@@ -1,4 +1,6 @@
-﻿  ofApp.cpp
+﻿  main.cpp
+  ofApp.cpp
+     Creating library bin\supershapes_debug.lib and object bin\supershapes_debug.exp
   supershapes.vcxproj -> C:\Users\Tariq Bakhtali\Desktop\OF\apps\KMIxD\supershapes\bin\supershapes_debug.exe
   supershapes.vcxproj -> bin\supershapes_debug.pdb (Full PDB)
   

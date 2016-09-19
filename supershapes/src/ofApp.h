@@ -8,7 +8,7 @@ class ofApp : public ofBaseApp{
 	public:
 		ofxPanel gui;
 		ofParameter<float> radius;
-		ofParameter<float> resolution;
+		ofParameter<int> resolution;
 
 		ofSpherePrimitive sphere;
 
