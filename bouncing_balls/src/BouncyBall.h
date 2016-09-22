@@ -6,9 +6,10 @@ class BouncyBall
 {
 public:
 	BouncyBall();
+	BouncyBall(ofVec3f _position, ofVec3f _speed, float _radius);
 
 	ofVec3f position;
-	float speedX, speedY;
+	ofVec3f speed;
 	float radius;
 	ofColor color;
 

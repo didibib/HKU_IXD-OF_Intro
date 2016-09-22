@@ -10,11 +10,11 @@ class ofApp : public ofBaseApp{
 		static const int nGrid = 10000;
 		Ball grid[nGrid];
 
-		ofVec3f position;
 		float radius = 10;
 		float spacing = 50;
 		int cols = ofGetWidth() / spacing;
 		int rows = ofGetHeight() / spacing;
+		int gridSize = cols * rows;
 
 		void setup();
 		void update();

@@ -2,10 +2,15 @@
 
 BouncyBall::BouncyBall() {
 	position = ofVec3f(ofGetMouseX(), ofGetMouseY(), 0);
-	speedX = ofRandom(-2, 2);
-	speedY = ofRandom(-2, 2);
+	speed = ofVec3f(ofRandom(-2, 2), ofRandom(-2, 2));
 	radius = ofRandom(10, 50);
-	color = ofColor(ofRandom(255), ofRandom(255), ofRandom(255));	
+	color = ofColor(ofRandom(255), ofRandom(255), ofRandom(255));
+}
+
+BouncyBall::BouncyBall(ofVec3f _position, ofVec3f _speed, float _radius) {
+	position = _position;
+	speed = _speed;
+	radius = _radius;
 }
 
 void BouncyBall::setupBall() {
@@ -13,8 +18,8 @@ void BouncyBall::setupBall() {
 }
 
 void BouncyBall::updateBall() {
-	position.x += speedX;
-	position.y += speedY;
+	position.x += speed.x;
+	position.y += speed.y;
 	radius += 1;
 
 	detectBorders();		
@@ -29,20 +34,20 @@ void BouncyBall::drawBall() {
 void BouncyBall::detectBorders() {
 	if (position.x <= 0) {
 		position.x = 0;
-		speedX *= -1;
+		speed.x *= -1;
 	}
 	else if (position.x >= ofGetWidth()) {
 		position.x = ofGetWidth();
-		speedX *= -1;
+		speed.x *= -1;
 	}
 
 	if (position.y <= 0) {
 		position.y = 0;
-		speedY *= -1;
+		speed.y *= -1;
 	}
 	else if (position.y >= ofGetHeight()) {
 		position.y = ofGetHeight();
-		speedY *= -1;
+		speed.y *= -1;
 	}
 }
 

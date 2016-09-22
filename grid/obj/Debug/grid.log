@@ -1,4 +1,5 @@
-﻿  main.cpp
-  ofApp.cpp
-src\main.cpp(11): error C2280: 'ofApp::ofApp(void)': attempting to reference a deleted function
-  c:\users\tariq bakhtali\desktop\of\apps\kmixd\grid\src\ofApp.h(25): note: compiler has generated 'ofApp::ofApp' here
+﻿  Ball.cpp
+  grid.vcxproj -> C:\Users\Tariq Bakhtali\Desktop\OF\apps\KMIxD\grid\bin\grid_debug.exe
+  grid.vcxproj -> bin\grid_debug.pdb (Full PDB)
+  
+  	                   9	C:\Users\Tariq Bakhtali\Desktop\OF\export\vs\Win32\
