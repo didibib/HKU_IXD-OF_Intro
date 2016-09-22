@@ -12,11 +12,9 @@ public:
 	float spacing;
 	float radius;
 	float distRadius;
-	ofVec3f mousePos;
+	float posX, posY;
 
 	void setup();
 	void update();
 	void draw();
-	float distance();
 };
-

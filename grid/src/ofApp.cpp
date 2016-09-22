@@ -10,23 +10,21 @@ void ofApp::setup(){
 			index += 1;
 		}
 	}
-	for (int i = 0; i < gridSize + 1; i++) {
-		grid[i].setup();
-	}
 }
 
 void ofApp::update(){
-	mousePos = ofVec3f((float)ofGetMouseX(), (float)ofGetMouseY());
-	for (int i = 0; i < gridSize + 1; i++) {
-		ofVec3f objPos = ofVec3f(grid[i].position.x, grid[i].position.y, grid[i].position.z);
-		float distance = objPos.distance(mousePos);
-	}
 	
 }
 
 void ofApp::draw(){
+	ofVec3f mousePos = ofVec3f(ofGetMouseX(), ofGetMouseY(), 0);
+
 	for (int i = 0; i < gridSize + 1; i++) {
 		grid[i].draw(); 
+
+		ofVec3f objPos = ofVec3f(grid[i].position.x, grid[i].position.y, grid[i].position.z);
+		ofDrawLine(grid[i].position.x, grid[i].position.y, mousePos.x, mousePos.y);
+		//float distance = objPos.distance(mousePos);
 	}
 }
 

@@ -15,11 +15,11 @@ class ofApp : public ofBaseApp{
 		int cols = ofGetWidth() / spacing;
 		int rows = ofGetHeight() / spacing;
 		int gridSize = cols * rows;
+		
 
 		void setup();
 		void update();
 		void draw();
 
-		void keyPressed(int key);
-		
+		void keyPressed(int key);		
 };
