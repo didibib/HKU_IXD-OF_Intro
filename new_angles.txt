@@ -1,0 +1,12 @@
+hardware:
+
+- Je hebt een plaat nodig met een pyramide patroon. 
+Elke pyramide heeft een RGB LED. Die LEDs samen zijn gemapt in een matrix.
+- Een kinect.
+
+software:
+
+- De software moet objecten kunnen onderscheiden. De afstand tussen het object en kinect bepaald de helderheid van een LED. 
+- Ook moet de software het beeld omzetten in een hex-vormig-met-driehoek-patroon-grid, zodat hij weet welke LEDs aangsproken moeten worden wanneer het object in beeld komt.
+- Er moeten animaties op afgespeeld kunnen worden.
+- 
