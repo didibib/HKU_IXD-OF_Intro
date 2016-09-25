@@ -8,12 +8,10 @@
 class ofApp : public ofBaseApp {
 
 	public:
-		static const int nBalls = 50;
+		static const int nBalls = 100;
 		BouncyBall balls[nBalls];
 
 		ofxPanel gui;
-		ofParameter<ofVec3f> position;
-		ofParameter<ofVec3f> speed;
 		ofParameter<float> radius;
 
 		void setup();

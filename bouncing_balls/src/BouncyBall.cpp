@@ -11,6 +11,7 @@ BouncyBall::BouncyBall(ofVec3f _position, ofVec3f _speed, float _radius) {
 	position = _position;
 	speed = _speed;
 	radius = _radius;
+	color = ofColor(ofRandom(255), ofRandom(255), ofRandom(255));
 }
 
 void BouncyBall::setupBall() {
@@ -54,7 +55,7 @@ void BouncyBall::detectBorders() {
 void BouncyBall::resetBall() {
 	if (radius >= 100) {
 		position = ofVec3f(ofGetMouseX(), ofGetMouseY(), 0);
-		radius = ofRandom(10, 50);
+		radius = ofRandom(10, 40);
 	}
 }
 

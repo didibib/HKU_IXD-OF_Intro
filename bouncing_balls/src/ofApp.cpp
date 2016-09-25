@@ -3,6 +3,8 @@
 void ofApp::setup() {
 	ofSetBackgroundColor(255);
 
+	gui.setup("Instellingen", "settings.xml");
+	gui.add(radius.set("Radius", 40, 10, 100));
 
 
 	for (int i = 0; i < nBalls; i++) {
@@ -14,16 +16,19 @@ void ofApp::setup() {
 
 void ofApp::update() {
 	for (int i = 0; i < nBalls; i++) {
-		balls[i].updateBall();
+		balls[i].updateBall();	
+		
+		if (balls[i].radius != radius) {
+			balls[i].radius = radius;
+		}
 	}
-
-
 }
 
 void ofApp::draw() {
+	gui.draw();
+
 	for (int i = 0; i < nBalls; i++) {
 		balls[i].drawBall();
-		balls[i].resetBall();
 	}
 }
 
