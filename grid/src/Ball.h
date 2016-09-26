@@ -17,4 +17,5 @@ public:
 	void setup();
 	void update();
 	void draw();
+	void drawCmd(float _posX, float _posY);
 };

@@ -13,6 +13,9 @@ public:
 	float radius;
 	ofColor color;
 
+	int maxLines;
+	int amountLines;
+
 	void setup();
 	void update();
 	void draw();

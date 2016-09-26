@@ -9,6 +9,9 @@ BouncyBall::BouncyBall(ofVec2f _position, float _speedX, float _speedY, int _rad
 	speed.y = _speedY;
 	radius = _radius;
 	color = _color;
+
+	maxLines = 3;
+	amountLines = 0;
 }
 
 void BouncyBall::setup() {

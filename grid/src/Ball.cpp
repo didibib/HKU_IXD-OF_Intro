@@ -24,3 +24,8 @@ void Ball::draw() {
 	ofSetColor(0);
 	ofDrawCircle(posX, posY, position.z, radius);
 }
+
+void Ball::drawCmd(float _posX, float _posY){
+	ofSetColor(0);
+	ofDrawCircle(_posX, _posY, position.z, radius);
+}

@@ -16,6 +16,7 @@ class ofApp : public ofBaseApp {
 		ofParameter<float> speedX;
 		ofParameter<float> speedY;
 		ofParameter<ofColor> color;
+		ofParameter<int> show;
 
 		ofArduino arduino;
 		void setupArduino(const int& version);

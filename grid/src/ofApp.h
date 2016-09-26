@@ -16,10 +16,24 @@ class ofApp : public ofBaseApp{
 		int rows = ofGetHeight() / spacing;
 		int gridSize = cols * rows;
 		
+		ofxPanel gui;		
 
 		void setup();
 		void update();
 		void draw();
+		
 
-		void keyPressed(int key);		
+		void keyPressed(int key);	
+
+		// ----------------------------------
+		int displacement;
+		int disEql;
+		int increment;
+		float disNoise;
+		ofParameter<int>increaseInc;
+		ofParameter<int>multrN;
+
+		float a = 0;
+		void v1_update();
+		void v1_draw();
 };
