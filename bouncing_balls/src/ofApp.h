@@ -8,11 +8,17 @@
 class ofApp : public ofBaseApp {
 
 	public:
-		static const int nBalls = 100;
-		BouncyBall balls[nBalls];
+		static const int nBalls = 10;
+		vector<BouncyBall> balls;
 
 		ofxPanel gui;
-		ofParameter<float> radius;
+		ofParameter<int> radius;
+		ofParameter<float> speedX;
+		ofParameter<float> speedY;
+		ofParameter<ofColor> color;
+
+		ofArduino arduino;
+		void setupArduino(const int& version);
 
 		void setup();
 		void update();
@@ -20,4 +26,5 @@ class ofApp : public ofBaseApp {
 
 		void keyPressed(int key);
 		void mousePressed(int x, int y, int button);
+		void mouseReleased(int x, int y, int button);
 };

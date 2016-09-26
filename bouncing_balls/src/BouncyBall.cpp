@@ -1,35 +1,31 @@
 #include "BouncyBall.h"
 
 BouncyBall::BouncyBall() {
-	position = ofVec3f(ofGetMouseX(), ofGetMouseY(), 0);
-	speed = ofVec3f(ofRandom(-2, 2), ofRandom(-2, 2));
-	radius = ofRandom(10, 50);
-	color = ofColor(ofRandom(255), ofRandom(255), ofRandom(255));
 }
 
-BouncyBall::BouncyBall(ofVec3f _position, ofVec3f _speed, float _radius) {
+BouncyBall::BouncyBall(ofVec2f _position, float _speedX, float _speedY, int _radius, ofColor _color) {
 	position = _position;
-	speed = _speed;
+	speed.x = _speedX;
+	speed.y = _speedY;
 	radius = _radius;
-	color = ofColor(ofRandom(255), ofRandom(255), ofRandom(255));
+	color = _color;
 }
 
-void BouncyBall::setupBall() {
+void BouncyBall::setup() {
 	
 }
 
-void BouncyBall::updateBall() {
+void BouncyBall::update() {
 	position.x += speed.x;
 	position.y += speed.y;
-	radius += 1;
 
 	detectBorders();		
 }
 
-void BouncyBall::drawBall() {
+void BouncyBall::draw() {
 	ofFill();
 	ofSetColor(color);
-	ofDrawCircle(position.x, position.y, position.z, radius);
+	ofDrawCircle(position.x, position.y, radius);
 }
 
 void BouncyBall::detectBorders() {
@@ -37,6 +33,7 @@ void BouncyBall::detectBorders() {
 		position.x = 0;
 		speed.x *= -1;
 	}
+
 	else if (position.x >= ofGetWidth()) {
 		position.x = ofGetWidth();
 		speed.x *= -1;
@@ -46,16 +43,9 @@ void BouncyBall::detectBorders() {
 		position.y = 0;
 		speed.y *= -1;
 	}
+
 	else if (position.y >= ofGetHeight()) {
 		position.y = ofGetHeight();
 		speed.y *= -1;
 	}
 }
-
-void BouncyBall::resetBall() {
-	if (radius >= 100) {
-		position = ofVec3f(ofGetMouseX(), ofGetMouseY(), 0);
-		radius = ofRandom(10, 40);
-	}
-}
-

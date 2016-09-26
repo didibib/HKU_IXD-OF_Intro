@@ -1,4 +1,8 @@
-﻿     Creating library bin\bouncing_balls_debug.lib and object bin\bouncing_balls_debug.exp
+﻿  main.cpp
+  ofApp.cpp
+src\ofApp.cpp(23): warning C4552: '!=': operator has no effect; expected operator with side-effect
+src\ofApp.cpp(26): warning C4552: '!=': operator has no effect; expected operator with side-effect
+     Creating library bin\bouncing_balls_debug.lib and object bin\bouncing_balls_debug.exp
   bouncing_balls.vcxproj -> C:\Users\Tariq Bakhtali\Desktop\OF\apps\KMIxD\bouncing_balls\bin\bouncing_balls_debug.exe
   bouncing_balls.vcxproj -> bin\bouncing_balls_debug.pdb (Full PDB)
   
