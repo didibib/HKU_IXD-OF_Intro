@@ -13,9 +13,12 @@ public:
 	float radius;
 	float distRadius;
 	float posX, posY;
+	ofColor color;
 
 	void setup();
 	void update();
 	void draw();
 	void drawCmd(float _posX, float _posY);
+	void setRadius(float _distanceMult);
+	void setColor(ofColor _color);
 };

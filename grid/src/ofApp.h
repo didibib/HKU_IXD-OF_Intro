@@ -10,22 +10,26 @@ class ofApp : public ofBaseApp{
 		static const int nGrid = 10000;
 		Ball grid[nGrid];
 
-		float radius = 10;
+		//float radius = 10; I made a parameter of this var
 		float spacing = 50;
 		int cols = ofGetWidth() / spacing;
-		int rows = ofGetHeight() / spacing;
+		int rows = ofGetHeight() / spacing;		
 		int gridSize = cols * rows;
+		float distance;
 		
-		ofxPanel gui;		
+		ofxPanel gui;
+		ofParameter<float> radius;
+		ofParameter<ofColor> color;
+
+		ofVec2f mousePos; 
 
 		void setup();
 		void update();
-		void draw();
-		
+		void draw();		
 
 		void keyPressed(int key);	
 
-		// ----------------------------------
+		// ------------------------------------------
 		int displacement;
 		int disEql;
 		int increment;

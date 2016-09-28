@@ -2,13 +2,17 @@
 
 void ofApp::setup() {
 	ofBackground(255);
-	gui.setup("Instellingen", "settings.xml");
-	gui.add(increaseInc.set("Increment", 1, 1, 10));
-	gui.add(multrN.set("Noise Multiplyer", 50, 1, 200));
+	gui.setup("Settings", "settings.xml");
+	gui.add(color.set("Color", ofColor::white));
+	gui.add(radius.set("Radius", 10, 1, 50));
+	//gui.add(increaseInc.set("Increment", 1, 1, 10));
+	//gui.add(multrN.set("Noise Multiplyer", 50, 1, 200));
+
+	cout << "\n" << "cols: " << cols << "  rows: " << rows;
 
 	int index = 0;
-	for (int x = 0; x < cols + 1; x++) {
-		for (int y = 0; y < rows + 1; y++) {
+	for (int x = 0; x < cols; x++) {
+		for (int y = 0; y < rows; y++) {
 			grid[index] = Ball(x, y, spacing, radius);
 			index += 1;
 		}
@@ -16,12 +20,23 @@ void ofApp::setup() {
 }
 
 void ofApp::update() {
-	v1_update();
+	mousePos = ofVec2f(ofGetMouseX(), ofGetMouseY());
+
+	for (int i = 0; i < gridSize; i++) {
+		ofVec2f ballPos = ofVec2f(grid[i].position.x, grid[i].position.y);
+		distance = ofMap(ballPos.distance(mousePos), 0, ofGetWidth(), radius, 0);
+		grid[i].setRadius(distance);		
+	}
 }
 
 void ofApp::draw() {
-
-	v1_draw();
+	for (int i = 0; i < gridSize; i++) {
+		float tmpc_f = ofMap(distance, radius, 0, 0, 255);
+		ofColor tmpc = ofColor(tmpc_f);
+		grid[i].setColor(tmpc);
+		grid[i].draw();
+		//ofDrawLine(grid[i].posX, grid[i].posY, mousePos.x, mousePos.y);		
+	}	
 
 	gui.draw();
 }
@@ -30,6 +45,8 @@ void ofApp::keyPressed(int key) {
 
 }
 
+// ------------------------------------------
+
 void ofApp::v1_update() {
 	a += 0.001;
 	disNoise = ofNoise(a) * multrN;
@@ -37,7 +54,6 @@ void ofApp::v1_update() {
 }
 
 void ofApp::v1_draw() {
-	ofVec3f mousePos = ofVec3f(ofGetMouseX(), ofGetMouseY(), 0);
 	ofSetColor(0);
 	increment = 0;
 	for (int i = 0; i < gridSize + 1; i++) {
