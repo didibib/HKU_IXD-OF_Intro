@@ -23,7 +23,7 @@ void Ball::update() {
 
 void Ball::draw() {
 	ofSetColor(color);
-	ofDrawCircle(position.x, position.y, radius);
+	ofDrawCircle(position.x, position.y, position.z, radius);
 }
 
 void Ball::setRadius(float _distanceMult) {
@@ -32,4 +32,8 @@ void Ball::setRadius(float _distanceMult) {
 
 void Ball::setColor(ofColor _color) {
 	color = _color;
+}
+
+void Ball::setPosZ(float _zPos) {
+	position.z = _zPos;
 }

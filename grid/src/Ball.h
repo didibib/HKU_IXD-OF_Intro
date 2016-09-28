@@ -18,7 +18,8 @@ public:
 	void setup();
 	void update();
 	void draw();
-	void drawCmd(float _posX, float _posY);
+
 	void setRadius(float _distanceMult);
 	void setColor(ofColor _color);
+	void setPosZ(float _zPos);
 };
