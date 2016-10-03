@@ -7,11 +7,10 @@ BouncyBall::BouncyBall(ofVec2f _position, float _speedX, float _speedY, int _rad
 	position = _position;
 	speed.x = _speedX;
 	speed.y = _speedY;
+	speedInit.x = _speedX;
+	speedInit.y = _speedY;
 	radius = _radius;
 	color = _color;
-
-	maxLines = 3;
-	amountLines = 0;
 }
 
 void BouncyBall::setup() {
@@ -51,4 +50,9 @@ void BouncyBall::detectBorders() {
 		position.y = ofGetHeight();
 		speed.y *= -1;
 	}
+}
+
+void BouncyBall::setSpeed(float _speedMultX, float _speedMultY) {
+	speed.x = speedInit.x * _speedMultX;
+	speed.y = speedInit.y * _speedMultX;
 }

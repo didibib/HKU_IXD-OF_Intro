@@ -10,14 +10,13 @@ public:
 
 	ofVec2f position;
 	ofVec2f speed;
+	ofVec2f speedInit;
 	float radius;
 	ofColor color;
-
-	int maxLines;
-	int amountLines;
 
 	void setup();
 	void update();
 	void draw();
 	void detectBorders();	
+	void setSpeed(float _speedMultX, float _speedMultY);
 };

@@ -18,14 +18,19 @@ class ofApp : public ofBaseApp {
 		ofParameter<ofColor> color;
 		ofParameter<int> show;
 
-		ofArduino arduino;
-		void setupArduino(const int& version);
-
 		void setup();
 		void update();
 		void draw();
 
+		
+
 		void keyPressed(int key);
 		void mousePressed(int x, int y, int button);
 		void mouseReleased(int x, int y, int button);
+
+	private:
+		ofArduino arduino;
+		void setupArduino(const int& version);
+		void digitalPinChanged(const int& pin);
+		void analogPinChanged(const int& pin);
 };
