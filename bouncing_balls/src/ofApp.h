@@ -20,9 +20,10 @@ class ofApp : public ofBaseApp {
 
 		void setup();
 		void update();
-		void draw();
+		void draw();	
 
-		
+		void addBall();
+		void deleteBall();
 
 		void keyPressed(int key);
 		void mousePressed(int x, int y, int button);

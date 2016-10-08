@@ -1,6 +1,6 @@
 ﻿  ofApp.cpp
-src\ofApp.cpp(32): warning C4552: '!=': operator has no effect; expected operator with side-effect
-src\ofApp.cpp(35): warning C4552: '!=': operator has no effect; expected operator with side-effect
+src\ofApp.cpp(33): warning C4552: '!=': operator has no effect; expected operator with side-effect
+src\ofApp.cpp(36): warning C4552: '!=': operator has no effect; expected operator with side-effect
   bouncing_balls.vcxproj -> C:\Users\Tariq Bakhtali\Desktop\OF\apps\KMIxD\bouncing_balls\bin\bouncing_balls_debug.exe
   bouncing_balls.vcxproj -> bin\bouncing_balls_debug.pdb (Full PDB)
   

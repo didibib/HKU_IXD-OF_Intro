@@ -10,7 +10,7 @@ class ofApp : public ofBaseApp{
 		static const int nGrid = 10000;
 		Ball grid[nGrid];
 
-		float spacing = 50;
+		float spacing = 30;
 		int cols = ofGetWidth() / spacing;
 		int rows = ofGetHeight() / spacing;		
 		int gridSize = cols * rows;

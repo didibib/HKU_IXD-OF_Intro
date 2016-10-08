@@ -1,12 +1,13 @@
 #include "ofApp.h"
 
 void ofApp::setup() {
+	//ofToggleFullscreen();
 	ofBackground(255);
 	ofEnableDepthTest();
 
 	gui.setup("Settings", "settings.xml");
 	gui.add(radius.set("Radius", 20, 1, 50));
-	gui.add(zValue.set("Z Value", 3, 1, 50));
+	gui.add(zValue.set("Z Value", 3, 1, 20));
 	gui.add(colorMultR.set("R multiplier", 2, 1, 5));
 	gui.add(colorMultG.set("G multiplier", 1, 1, 5));
 	gui.add(colorMultB.set("B multiplier", 1, 1, 5));
@@ -18,8 +19,6 @@ void ofApp::setup() {
 			index += 1;
 		}
 	}
-
-	incRadius = 1;
 }
 
 void ofApp::update() {
@@ -33,7 +32,7 @@ void ofApp::update() {
 
 		grid[i].setRadius(distanceRadius);
 		grid[i].setPosZ(distancePosZ);
-	}
+	} 
 }
 
 void ofApp::draw() {

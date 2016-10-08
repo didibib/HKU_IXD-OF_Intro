@@ -27,7 +27,7 @@ void BouncyBall::update() {
 void BouncyBall::draw() {
 	ofFill();
 	ofSetColor(color);
-	ofDrawCircle(position.x, position.y, radius);
+	ofSphere(position.x, position.y, radius);
 }
 
 void BouncyBall::detectBorders() {
