@@ -2,11 +2,21 @@
 
 #include "ofMain.h"
 #include "ofxGui.h"
+#include "BouncyBall.h"
 
 class ofApp : public ofBaseApp{
 
 	public:
 		ofxPanel gui;
+		ofParameter<float> speedX;
+		ofParameter<float> speedY;
+		ofParameter<float> speedZ;
+		ofParameter<ofColor> color;
+
+		vector<BouncyBall> balls;
+
+		ofBoxPrimitive box;
+		float boxSize = 500;
 
 		ofEasyCam cam;
 		ofLight light;
@@ -15,8 +25,10 @@ class ofApp : public ofBaseApp{
 		void update();
 		void draw();
 
-		void doos(float _a);
+		void box(float _size);
 
+		void addBall();
+		void deleteBall();
+		
 		void keyPressed(int key);
-		void mousePressed(int x, int y, int button);
 };

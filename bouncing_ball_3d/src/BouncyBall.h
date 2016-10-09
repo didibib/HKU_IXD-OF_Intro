@@ -6,12 +6,15 @@ class BouncyBall
 {
 public:
 	BouncyBall();
-	BouncyBall(ofVec3f _position, float _speedX, float _speedY, float _speedZ, ofColor _color);
+	BouncyBall(ofVec3f _position, ofVec3f _speed, ofColor _color, float _boxSize);
 
 	ofVec3f position;
 	ofVec3f speed;
 	float radius;
 	ofColor color;
+	float border;
+
+	ofConePrimitive cone;
 
 	void setup();
 	void update();
