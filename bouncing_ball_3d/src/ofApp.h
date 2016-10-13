@@ -15,7 +15,7 @@ class ofApp : public ofBaseApp{
 
 		vector<BouncyBall> balls;
 
-		ofBoxPrimitive box;
+		ofBoxPrimitive cube;
 		float boxSize = 500;
 
 		ofEasyCam cam;

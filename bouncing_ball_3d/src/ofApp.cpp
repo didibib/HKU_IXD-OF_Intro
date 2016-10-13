@@ -9,7 +9,7 @@ void ofApp::setup(){
 	gui.add(speedZ.set("Speed Z", 2.5, -10, 10));
 	gui.add(color.set("color", ofColor::black));
 
-	box.set(boxSize);
+	cube.set(boxSize);
 	
 	light.setDirectional();
 	light.setPosition(-200, -200, -200);
@@ -29,14 +29,16 @@ void ofApp::draw(){
 	cam.begin();
 	
 	ofSetColor(0);
-	box.drawWireframe();
+	ofSetLineWidth(5);
+	box(boxSize);
+	//cube.drawWireframe();
 	for (int i = 0; i < balls.size(); i++) {
 		balls[i].draw();
 	}
 
 	cam.end();
 	ofDisableDepthTest();
-
+	
 	gui.draw();
 }
 
@@ -65,5 +67,9 @@ void ofApp::keyPressed(int key){
 
 void ofApp::box(float _size) {
 	float w = _size / 2;
-	ofDrawLine(-w, -w, w, w, -w, w);
+	ofDrawLine(-w, -w, 0, w, -w, 0);
+	ofDrawLine(w, -w, 0, w, w, 0);
+	ofDrawLine(-w, w, 0, w, w, 0);
+	ofDrawLine(-w, -w, 0, -w, w, 0);
+	cout << "\n" << w;
 }

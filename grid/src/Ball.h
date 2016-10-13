@@ -19,6 +19,7 @@ public:
 	void update();
 	void draw();
 
+	void setSpacing(float _newSpacing);
 	void setRadius(float _distanceMult);
 	void setColor(ofColor _color);
 	void setPosZ(float _zPos);

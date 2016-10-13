@@ -4,32 +4,32 @@
 #include "ofxGui.h"
 #include "Ball.h"
 
-class ofApp : public ofBaseApp{
+class ofApp : public ofBaseApp {
 
-	public:
-		static const int nGrid = 10000;
-		Ball grid[nGrid];
+public:
+	static const int nGrid = 10000;
+	Ball grid[nGrid];
 
-		float spacing = 30;
-		int cols = ofGetWidth() / spacing;
-		int rows = ofGetHeight() / spacing;		
-		int gridSize = cols * rows;
+	ofxPanel gui;
+	ofParameter<float> spacing;
+	float oldSpacing;
+	ofParameter<float> radius;
+	ofParameter<int> zValue;
+	ofParameter<int> colorMultR;
+	ofParameter<int> colorMultG;
+	ofParameter<int> colorMultB;
 
-		float ampRadius;
-		float incRadius;
-		
-		ofxPanel gui;
-		ofParameter<float> radius;
-		ofParameter<int> zValue;
-		ofParameter<int> colorMultR;
-		ofParameter<int> colorMultG;
-		ofParameter<int> colorMultB;
+	int cols, rows;
+	int gridSize;
 
-		ofVec2f mousePos; 
+	float ampRadius;
+	float incRadius;
 
-		void setup();
-		void update();
-		void draw();		
+	ofVec2f mousePos;
 
-		void mouseReleased(int x, int y, int button);
+	void setup();
+	void update();
+	void draw();
+
+	void mouseReleased(int x, int y, int button);
 };
