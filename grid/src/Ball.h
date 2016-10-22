@@ -15,6 +15,8 @@ public:
 	float posX, posY;
 	ofColor color;
 
+	ofSpherePrimitive sphere;
+
 	void setup();
 	void update();
 	void draw();

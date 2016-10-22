@@ -14,7 +14,7 @@ Ball::Ball(int _x, int _y, float _spacing, float _radius) {
 }
 
 void Ball::setup() {
-
+	sphere.set(radius, 2, OF_PRIMITIVE_TRIANGLE_STRIP);
 }
 
 void Ball::update() {
@@ -23,7 +23,9 @@ void Ball::update() {
 
 void Ball::draw() {
 	ofSetColor(color);
-	ofDrawCircle(position.x, position.y, position.z, radius);
+	sphere.setPosition(position.x, position.y, position.z);
+	sphere.draw();
+	//ofDrawCircle(position.x, position.y, position.z, radius);
 }
 
 void Ball::setSpacing(float _newSpacing) {
@@ -35,6 +37,7 @@ void Ball::setSpacing(float _newSpacing) {
 
 void Ball::setRadius(float _distanceMult) {
 	radius = _distanceMult;
+	sphere.set(radius, 2, OF_PRIMITIVE_TRIANGLE_STRIP);
 }
 
 void Ball::setColor(ofColor _color) {
