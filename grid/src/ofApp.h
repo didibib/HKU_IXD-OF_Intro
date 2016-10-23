@@ -7,6 +7,9 @@
 #include "Ball.h"
 #include <cmath>
 
+#define CAM_WIDTH 320
+#define CAM_HEIGHT 240
+
 class ofApp : public ofBaseApp {
 
 public:
@@ -26,17 +29,32 @@ public:
 	int cols, rows;
 	int gridSize;
 	
-	ofVec2f mousePos;
+	//ofVec2f mousePos;
+	ofVec2f position;
 	bool isPressed;
 
 	ofLight light;
 
-	void setup();
-	void update();
-	void draw();
+	ofVideoGrabber 		vidGrabber;
+
+	ofxCvColorImage			colorImg;
+
+	ofxCvGrayscaleImage 	grayImage;
+	ofxCvGrayscaleImage 	grayBg;
+	ofxCvGrayscaleImage 	grayDiff;
+
+	ofxCvContourFinder 	contourFinder;
+
+	int 				threshold;
+	bool				bLearnBakground;
+
 	void drawGrid();
 	float powpow(float _var);
 	float pointsym(float _var);
 
-	void mousePressed(int x, int y, int button);
+	void setup();
+	void update();
+	void draw();
+	void keyPressed(int key);
+	void mousePressed(int x, int y, int button);	
 };
