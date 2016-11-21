@@ -5,13 +5,12 @@ void ofApp::setup(){
 
 	rgbImage.allocate(CAM_WIDTH, CAM_HEIGHT);
 	hsvImage.allocate(CAM_WIDTH, CAM_HEIGHT);
-	filtered.allocate(CAM_WIDTH, CAM_HEIGHT);
-
+	
 	hue.allocate(CAM_WIDTH, CAM_HEIGHT);
 	saturation.allocate(CAM_WIDTH, CAM_HEIGHT);
 	value.allocate(CAM_WIDTH, CAM_HEIGHT);
 
-	selection = 0;
+	filtered.allocate(CAM_WIDTH, CAM_HEIGHT);
 }
 
 void ofApp::update(){
@@ -24,9 +23,10 @@ void ofApp::update(){
 		hsvImage = rgbImage;
 		hsvImage.convertRgbToHsv();
 		hsvImage.convertToGrayscalePlanarImages(hue, saturation, value);
+		// VRAAG: WAT GEBEURT HIER OOK ALWEER
 
 		for (int i = 0; i < CAM_WIDTH * CAM_HEIGHT; i++) {
-			if (ofInRange(selection, selection - MARGIN, selection + MARGIN)) {
+			if (ofInRange(hue.getPixels()[i], selectedHue - MARGIN, selectedHue + MARGIN)) {
 				filtered.getPixels()[i] = 255;
 			}
 			else {
@@ -52,6 +52,6 @@ void ofApp::keyPressed(int key){
 }
 
 void ofApp::mousePressed(int x, int y, int button){
-	selection = hue.getPixels()[x + y * CAM_WIDTH];
-	cout << "selection: " << selection << endl;
+	selectedHue = hue.getPixels()[x + y * CAM_WIDTH];
+	cout << "selectedHue: " << selectedHue << endl;
 }

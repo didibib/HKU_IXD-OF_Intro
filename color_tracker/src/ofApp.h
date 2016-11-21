@@ -19,9 +19,11 @@ class ofApp : public ofBaseApp{
 		ofxCvGrayscaleImage hue;
 		ofxCvGrayscaleImage saturation;
 		ofxCvGrayscaleImage value;
-		ofxCvGrayscaleImage filtered;
 
-		int selection;
+		ofxCvGrayscaleImage filtered;
+		ofxCvContourFinder finder;
+
+		int selectedHue;
 
 		void setup();
 		void update();
