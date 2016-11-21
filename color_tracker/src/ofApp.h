@@ -7,6 +7,7 @@
 
 static const int CAM_WIDTH = 320;
 static const int CAM_HEIGHT = 240;
+static const int SELECTED = 2;
 
 class ofApp : public ofBaseApp{
 
@@ -23,7 +24,8 @@ class ofApp : public ofBaseApp{
 		ofxCvGrayscaleImage filtered;
 		ofxCvContourFinder finder;
 
-		int selectedHue;
+		int selectedHue[SELECTED];
+		int mouseClicked;
 
 		void setup();
 		void update();
