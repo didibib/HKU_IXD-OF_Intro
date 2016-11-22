@@ -27,6 +27,7 @@ class ofApp : public ofBaseApp{
 		//int selectedHue[SELECTED];
 		vector<int> selectedHue;
 		int mouseClicked;
+		float z;
 
 		void setup();
 		void update();
@@ -36,6 +37,6 @@ class ofApp : public ofBaseApp{
 		void mousePressed(int x, int y, int button);
 
 		//ostream& operator<<(ostream& os,)
-		//cout << "selectedHue: " << selectedHue << endl;
+		//ecout << "selectedHue: " << selectedHue << endl;
 		// VRAAG: HOE DEZE IMPLEMENTEREN
 };
