@@ -38,17 +38,11 @@ void ofApp::update() {
 			{
 				// VRAAG: WAAROM PAKKEN WE DE HUE ?
 				if (ofInRange(hue.getPixels()[i], selectedHue[j] - MARGIN, selectedHue[j] + MARGIN)) {
-					//filtered.getPixels()[i] = 255; // binnen de margin wordt de pixel wit
 
-					/*
-					for (int x = 0; x < CAM_WIDTH; x++) {
-						for (int y = 0; y < CAM_HEIGHT; y++) {
-							float co = 255 * ofNoise(x / 500, y / 500, z);
-							filtered.getPixels()[x + y * CAM_WIDTH] = co;
-						}
-					}
+					float co = 255 * ofNoise(i / 500, i / 500, z);
+					filtered.getPixels()[i] = co; // binnen de margin wordt de pixel wit
+							
 					z += 0.02;
-					*/					
 				}
 				else
 				{
