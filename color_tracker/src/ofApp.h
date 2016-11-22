@@ -24,7 +24,8 @@ class ofApp : public ofBaseApp{
 		ofxCvGrayscaleImage filtered;
 		ofxCvContourFinder finder;
 
-		int selectedHue[SELECTED];
+		//int selectedHue[SELECTED];
+		vector<int> selectedHue;
 		int mouseClicked;
 
 		void setup();
@@ -32,5 +33,9 @@ class ofApp : public ofBaseApp{
 		void draw();
 
 		void keyPressed(int key);
-		void mousePressed(int x, int y, int button);		
+		void mousePressed(int x, int y, int button);
+
+		//ostream& operator<<(ostream& os,)
+		//cout << "selectedHue: " << selectedHue << endl;
+		// VRAAG: HOE DEZE IMPLEMENTEREN
 };
